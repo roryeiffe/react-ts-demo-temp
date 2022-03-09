@@ -3,11 +3,23 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+// Routing imports
+import {BrowserRouter} from 'react-router-dom';
+
+// redux imports:
+import {Provider} from 'react-redux';
+import store from './store/index';
+
+// Bootstrap:
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
+import '../node_modules/bootstrap/dist/js/bootstrap'
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <Provider store = {store}>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </Provider>,
   document.getElementById('root')
 );
 
